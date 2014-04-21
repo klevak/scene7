@@ -38,7 +38,20 @@
       </div>
     </div>
 
- 
+ <script type="text/javascript" language="javascript" src="http://s7d9.scene7.com/s7viewers/html5/js/SpinViewer.js"></script>
+<div id="s7_spinview"></div>
+<script type="text/javascript">
+var spinViewer = new s7viewers.SpinViewer();
+spinViewer.setContainerId("s7_spinview");
+spinViewer.setParam("serverurl", "http://s7d9.scene7.com/is/image/");
+spinViewer.setParam("contenturl", "http://s7d9.scene7.com/skins/");
+spinViewer.setParam("asset", "LLBean/Cyberduck");
+spinViewer.setParam("config", "Scene7SharedAssets/Universal_HTML5_SpinSet_light");
+spinViewer.setParam("emailurl", "http://s7d9.scene7.com/s7/emailFriend");
+spinViewer.setParam("stagesize", "512,288");
+spinViewer.setParam("config2", "companypreset");
+spinViewer.init();
+</script>
 
     </div><!-- /.container -->
 
