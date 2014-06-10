@@ -15,6 +15,13 @@ Batch Job That Generates Catalog
 - ecd189
 
 
+ANCII Tables
+- http://www.asciitable.com/
+- 
+
+Kerning
+-- http://en.wikipedia.org/wiki/Kerning
+
 
 
 Image URL Breakdown
@@ -26,7 +33,7 @@ http://cdni.llbean.com/is/image/?layer=0&size=1201,507&extend=50,50,50,50&bgc=25
 ```
 http://cdni.llbean.com/is/image/?
 
-- The first layer denotes the background image
+-- The first layer denotes the background image
 layer=0
 &size=1201,507
 &extend=50,50,50,50   - Adds margins to a layer or crops the layer rectangle.
@@ -36,15 +43,21 @@ layer=0
 
 -- Denotes the image used for the swatch
 &layer=5
-&pos=-2150,-1400   - Positive values move the layer towards the right/bottom, negative towards the left/top.
-&anchor=500,500
+&pos=-2150,-1400 - Positive values move the layer towards the right/bottom, negative towards the left/top.
+&anchor=500,500  - 
 &src=is{wim/236564_39047_42?scl=0.4}
+
+
+
 
 
 &layer=10
 &pos=-600,-253
 &anchor=0,0
 &src=is{wim-mono/script_84?op_colorize=160,160,45}
+-- http://cdni.llbean.com/is/image/wim-mono/athletic_75?op_colorize=160,160,45 
+-- http://cdni.llbean.com/is/image/wim-mono/script_84?req=userdata&id=script_84
+s7data({'coords':'391,507,8713,54,0,143'},'script_84')
 
 &layer=20
 &pos=-365,-253
