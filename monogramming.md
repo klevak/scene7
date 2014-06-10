@@ -85,27 +85,57 @@ s7data({'coords':'391,507,8713,54,0,143'},'script_84')
 ```
 
 
-System Impacts
+System Impacts  (Effort / Complexity)
 
- - WIM  Swing/Java/JSP Application  (To Expose New "Monogramming" Image Type)
-    - Database Impacts
-        - Insert new values in Tables to create new "monogramming" image types
-        - Using Data sourced from current swatches
+ - WIM Swing/Java/JSP Application (To Expose New "Monogramming" Image Type)
+    - Database Impacts - (High / High)
+        - Configuration data (meta data that drives the image type)  - (Low / Med)
+            - Assumption is that this will be a prereq to Ongoing updates
+            
+        - Prepopulate  (only for pages that have monogramming)  (Very High / High)
+            - Insert new values in Tables to create new "monogramming" image types  (SQL Script or Program)
+            - Using Data sourced from current swatches
+            - Risk
+               - Keys
+               - Logic to select pages that are affected (will come from a static list)
+               - Determine what tables to populate
+               - Test
+               - Planning
+            
+        - Ongoing  (Assume that the image type status is disabled)  Low / Med (esp. if disabled)
+            - Modifications to WIM Image Import to create new image type when needed
+
 
     - Possible Java impacts for adding new image type ?? (Assumption is no)
-        
+    
     - NEW Image Type
         - Related to the Composite purpose  (Product Page)
-        
-    - Image Preview
+    
+    - Image Preview  (Med / Med)
         - Previewing new "Monogramming" Image Type
+        - JSP (Page that displays html for preview) To add the new image on the page
+        - Java (class that generates the url) would not be impacted as only coord data is updated
+           - Assumes little or no Java updates
  
 
- - WIM Batch  (PERL)   (Tim is expert)
-    - Image Catalog Generation
+ - WIM Batch  
+    - Image Import  (Low / High) ** Unknowns / Lots of testing
+      - Creates new image type data in WIM database.  
+       * This is impacted by the new relationship between the "monogramming" image type and the product page composite purpose
+         - Uses data inside of the image manifest
+         - Creates or Update
+             - Composite
+             - Image Types
+             - Layers
+             - etc.
+
+
+  - Image Catalog Generation (PERL)  (Low / Med) ** Unknowns / Lots of testing
     - Generates URLs based on data from WIM tables
     - Geletes and inserts records in catgroup_image table
     - Creates wim.txt files
+      
+
 
 
 Definition of 'Done'
