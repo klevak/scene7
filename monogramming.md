@@ -83,3 +83,40 @@ s7data({'coords':'391,507,8713,54,0,143'},'script_84')
 &wid=360
 &hei=140
 ```
+
+
+System Impacts
+
+ - WIM  Swing/Java/JSP Application  (To Expose New "Monogramming" Image Type)
+    - Database Impacts
+        - Insert new values in Tables to create new "monogramming" image types
+        - Using Data sourced from current swatches
+
+    - Possible Java impacts for adding new image type ?? (Assumption is no)
+        
+    - NEW Image Type
+        - Related to the Composite purpose  (Product Page)
+        
+    - Image Preview
+        - Previewing new "Monogramming" Image Type
+ 
+
+ - WIM Batch  (PERL)   (Tim is expert)
+    - Image Catalog Generation
+    - Generates URLs based on data from WIM tables
+    - Geletes and inserts records in catgroup_image table
+    - Creates wim.txt files
+
+
+Definition of 'Done'
+
+ - New entry in the image catalog to represent "Monogramming" image type (e.g. 236564_39047_XX)
+    -  http://cdni.llbean.com/is/image/?layer=0&size=1201,507&extend=50,50,50,50&bgc=255,255,255&fmt=png&resMode=sharp&layer=5&pos=-2150,-1500&anchor=500,500&src=is{wim/236564_39047_42?scl=0.4}&wid=360&hei=140
+
+ - WIM Application
+    - WIM UI Shows the Monogramming image type
+        - User is able to edit the values for pos, anchor, scale (at the image type level)
+        - User is able to edit the values for pos, anchor, scale (at the image type level / color level)
+        
+    - WIM Preview displays the image type
+
